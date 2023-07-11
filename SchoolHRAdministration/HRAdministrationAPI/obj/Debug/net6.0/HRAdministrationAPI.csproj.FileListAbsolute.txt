@@ -1,0 +1,12 @@
+E:\Users\tradi\source\repos\SchoolHRAdministration\HRAdministrationAPI\bin\Debug\net6.0\HRAdministrationAPI.deps.json
+E:\Users\tradi\source\repos\SchoolHRAdministration\HRAdministrationAPI\bin\Debug\net6.0\HRAdministrationAPI.dll
+E:\Users\tradi\source\repos\SchoolHRAdministration\HRAdministrationAPI\bin\Debug\net6.0\HRAdministrationAPI.pdb
+E:\Users\tradi\source\repos\SchoolHRAdministration\HRAdministrationAPI\obj\Debug\net6.0\HRAdministrationAPI.csproj.AssemblyReference.cache
+E:\Users\tradi\source\repos\SchoolHRAdministration\HRAdministrationAPI\obj\Debug\net6.0\HRAdministrationAPI.GeneratedMSBuildEditorConfig.editorconfig
+E:\Users\tradi\source\repos\SchoolHRAdministration\HRAdministrationAPI\obj\Debug\net6.0\HRAdministrationAPI.AssemblyInfoInputs.cache
+E:\Users\tradi\source\repos\SchoolHRAdministration\HRAdministrationAPI\obj\Debug\net6.0\HRAdministrationAPI.AssemblyInfo.cs
+E:\Users\tradi\source\repos\SchoolHRAdministration\HRAdministrationAPI\obj\Debug\net6.0\HRAdministrationAPI.csproj.CoreCompileInputs.cache
+E:\Users\tradi\source\repos\SchoolHRAdministration\HRAdministrationAPI\obj\Debug\net6.0\HRAdministrationAPI.dll
+E:\Users\tradi\source\repos\SchoolHRAdministration\HRAdministrationAPI\obj\Debug\net6.0\refint\HRAdministrationAPI.dll
+E:\Users\tradi\source\repos\SchoolHRAdministration\HRAdministrationAPI\obj\Debug\net6.0\HRAdministrationAPI.pdb
+E:\Users\tradi\source\repos\SchoolHRAdministration\HRAdministrationAPI\obj\Debug\net6.0\ref\HRAdministrationAPI.dll

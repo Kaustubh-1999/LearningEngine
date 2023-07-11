@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "2oCavaoFE292QbpCFbl3XCYu972KvzxQ0m4JLgI+OlhMNZ62i8nsxwej/DjSuCPZmYEkGLjbvG23kPwuvwsKRg==",
+  "success": true,
+  "projectFilePath": "E:\\Users\\tradi\\source\\repos\\SchoolHRAdministration\\SchoolHRAdministration\\SchoolHRAdministration.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tradi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\tradi\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\tradi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\tradi\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}
