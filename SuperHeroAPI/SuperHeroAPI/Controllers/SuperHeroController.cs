@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using SuperHeroAPI.Data;
 
 namespace SuperHeroAPI.Controllers
 {
@@ -7,32 +9,32 @@ namespace SuperHeroAPI.Controllers
     [ApiController]
     public class SuperHeroController : ControllerBase
     {
-        private static List<SuperHero> heroes = new List<SuperHero>
-            {
-                new SuperHero { id = 1,
-                                name =  "Spiderman",
-                                FirstName = "Peter",
-                                LastName = "Parker",
-                                Place = "New York City"
-                },
-                new SuperHero { id = 2,
-                                name =  "Hulk",
-                                FirstName = "Bruce",
-                                LastName = "Banner",
-                                Place = "Unknown"
-                }
-            };
+        //private static List<SuperHero> heroes = new List<SuperHero>
+        //    {
+        //        new SuperHero { id = 2,
+        //                        name =  "Hulk",
+        //                        FirstName = "Bruce",
+        //                        LastName = "Banner",
+        //                        Place = "Unknown"
+        //        }
+        //    };
+        private readonly DataContext _context;
+
+        public SuperHeroController(DataContext context)
+        {
+            _context = context;
+        }
 
         [HttpGet]   
         public async Task<ActionResult<List<SuperHero>>> Get()
         { 
-            return Ok(heroes);
+            return Ok(await _context.superHeroes.ToListAsync());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<SuperHero>> Get(int id)
         {
-            var hero = heroes.Find(h => h.id == id);
+            var hero = await _context.superHeroes.FindAsync(id);
             if (hero == null)
                 return BadRequest("Hero Not Found");
             return Ok(hero);
@@ -41,33 +43,37 @@ namespace SuperHeroAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<List<SuperHero>>> AddHero(SuperHero hero)
         {
-            heroes.Add(hero);
-            return Ok(heroes);
+            _context.superHeroes.Add(hero);
+            await _context.SaveChangesAsync();
+            return Ok(await _context.superHeroes.ToListAsync());
         }
 
         [HttpPut]
         public async Task<ActionResult<List<SuperHero>>> UpdateHero(SuperHero request)
         {
-            var hero = heroes.Find(h => h.id == request.id);
-            if (hero == null)
+            var dbHero = await _context.superHeroes.FindAsync(request.id);
+            if (dbHero == null)
                 return BadRequest("Hero Not Found");
 
-            hero.name = request.name;
-            hero.FirstName = request.FirstName;
-            hero.LastName = request.LastName;   
-            hero.Place = request.Place; 
+            dbHero.name = request.name;
+            dbHero.FirstName = request.FirstName;
+            dbHero.LastName = request.LastName;
+            dbHero.Place = request.Place;
 
-            return Ok(heroes);
+            await _context.SaveChangesAsync();
+
+            return Ok(await _context.superHeroes.ToListAsync());
         }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<SuperHero>> DeleteHero(int id)
         {
-            var hero = heroes.Find(h => h.id == id);
-            if (hero == null)
+            var dbhero = await _context.superHeroes.FindAsync(id);
+            if (dbhero == null)
                 return BadRequest("Hero Not Found");
-            heroes.Remove(hero);
-            return Ok(heroes);
+            _context.superHeroes.Remove(dbhero);
+            await _context.SaveChangesAsync();
+            return Ok(await _context.superHeroes.ToListAsync());
         }
 
     }
